@@ -36,6 +36,9 @@ function validateForm() {
     } else {
         console.log("Remember Me is not checked.");
     }
+    if (valid){
+        alert("Form submitted successfully")
+    }
 
     // If validation fails, prevent form submission
     return valid;
