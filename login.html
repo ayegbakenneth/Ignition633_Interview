@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        /* General Reset */
+        /* This style the general outlook of the page*/
         * {
             margin: 0;
             padding: 0;
@@ -21,7 +21,7 @@
             align-items: center;
         }
 
-        /* Centered Container */
+        /*This part keeps the login details in the middle of the page */
         .login-container {
             background-color: #ffffff;
             width: 100%;
@@ -32,7 +32,7 @@
             text-align: center;
         }
 
-        /* Form Header Styling */
+        /* This help to style the header part of the form */
         .login-container header h1 {
             margin-bottom: 20px;
             font-size: 1.8em;
@@ -61,7 +61,7 @@
             background-color: #0056b3;
         }
 
-        /* Input Fields */
+        /* This refines the looks of the input fields */
         input[type="text"],
         input[type="password"] {
             width: 100%;
@@ -72,7 +72,7 @@
             font-size: 1em;
         }
 
-        /* Error Styling */
+        /* Styling the errors */
         .error {
             color: red;
             font-size: 0.85em;
@@ -81,7 +81,7 @@
             margin-bottom: 10px;
         }
 
-        /* Remember Me and Forgot Password */
+        /* Forgot and Remenber me styling */
         .form-options {
             display: flex;
             justify-content: space-between;
@@ -128,7 +128,7 @@
         <header>
             <h1>Login</h1>
         </header>
-        <form action="/login" method="POST" onsubmit="return validate()">
+        <form action="/login" method="POST" onsubmit="return validateForm()">
             <!-- Form Header with Register Now Button -->
             <div class="form-header">
                 <span></span> <!-- Empty span to keep spacing -->
@@ -156,6 +156,6 @@
         </form>
     </div>
 
-    <script src="login.js"></script>
+    <script src="/login.js"></script>
 </body>
 </html>
