@@ -5,15 +5,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <style>
-        .error {
-            color: red;
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Centered Container */
+        .login-container {
+            background-color: #ffffff;
+            width: 100%;
+            max-width: 400px;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        /* Form Header Styling */
+        .login-container header h1 {
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            color: #333;
+        }
+
         .form-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
             margin-bottom: 20px;
         }
+
         .register-button {
             background-color: #007BFF;
             color: white;
@@ -24,42 +56,106 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
         .register-button:hover {
             background-color: #0056b3;
+        }
+
+        /* Input Fields */
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+
+        /* Error Styling */
+        .error {
+            color: red;
+            font-size: 0.85em;
+            text-align: left;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        /* Remember Me and Forgot Password */
+        .form-options {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.9em;
+            margin: 15px 0;
+        }
+
+        .form-options label {
+            display: flex;
+            align-items: center;
+        }
+
+        .forgot-password {
+            text-decoration: none;
+            color: #007BFF;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        /* Submit Button */
+        input[type="submit"] {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            font-size: 1em;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #218838;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Login</h1>
-    </header>
-    <form action="/login" method="POST" onsubmit="return validate()">
-        <!-- Form Header with Register Now Button -->
-        <div class="form-header">
-            <span></span> <!-- Empty span to keep spacing -->
-            <a href="/register" class="register-button">Register Now</a>
-        </div>
 
-        <!-- Username Field -->
-        <input type="text" id="username" name="username" placeholder="Username"><br>
-        <span id="usernameError" class="error"></span><br><br>
+    <!-- Login Container -->
+    <div class="login-container">
+        <header>
+            <h1>Login</h1>
+        </header>
+        <form action="/login" method="POST" onsubmit="return validate()">
+            <!-- Form Header with Register Now Button -->
+            <div class="form-header">
+                <span></span> <!-- Empty span to keep spacing -->
+                <a href="/register" class="register-button">Register Now</a>
+            </div>
 
-        <!-- Password Field -->
-        <input type="password" id="password" name="password" placeholder="Password"><br>
-        <span id="passwordError" class="error"></span><br><br>
+            <!-- Username Field -->
+            <input type="text" id="username" name="username" placeholder="Username">
+            <span id="usernameError" class="error"></span>
 
-        <!-- Remember Me and Forgot Password -->
-        <div class="form-options">
-            <label>
-                <input type="checkbox" id="rememberMe" name="rememberMe"> Remember me
-            </label>
-            <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
-        </div>
+            <!-- Password Field -->
+            <input type="password" id="password" name="password" placeholder="Password">
+            <span id="passwordError" class="error"></span>
 
-        <br>
-        <!-- Submit Button -->
-        <input type="submit" value="Login">
-    </form>
+            <!-- Remember Me and Forgot Password -->
+            <div class="form-options">
+                <label>
+                    <input type="checkbox" id="rememberMe" name="rememberMe"> Remember me
+                </label>
+                <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Login">
+        </form>
+    </div>
+
     <script src="login.js"></script>
 </body>
 </html>
