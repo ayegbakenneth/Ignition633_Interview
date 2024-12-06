@@ -8,6 +8,25 @@
         .error {
             color: red;
         }
+        .form-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .register-button {
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            text-decoration: none;
+            font-size: 0.9em;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .register-button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
@@ -15,17 +34,32 @@
         <h1>Login</h1>
     </header>
     <form action="/login" method="POST" onsubmit="return validate()">
-        <input type="text" id="username" username="username" placeholder="username"><br>
+        <!-- Form Header with Register Now Button -->
+        <div class="form-header">
+            <span></span> <!-- Empty span to keep spacing -->
+            <a href="/register" class="register-button">Register Now</a>
+        </div>
+
+        <!-- Username Field -->
+        <input type="text" id="username" name="username" placeholder="Username"><br>
         <span id="usernameError" class="error"></span><br><br>
 
+        <!-- Password Field -->
         <input type="password" id="password" name="password" placeholder="Password"><br>
-        <br>
-
         <span id="passwordError" class="error"></span><br><br>
 
+        <!-- Remember Me and Forgot Password -->
+        <div class="form-options">
+            <label>
+                <input type="checkbox" id="rememberMe" name="rememberMe"> Remember me
+            </label>
+            <a href="/forgot-password" class="forgot-password">Forgot Password?</a>
+        </div>
+
+        <br>
+        <!-- Submit Button -->
         <input type="submit" value="Login">
     </form>
     <script src="login.js"></script>
 </body>
 </html>
-
